@@ -1,0 +1,21 @@
+{
+  "name": "Title checker",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Check title of active tab."
+  },
+  "permissions": ["tabs"],
+  "host_permissions": ["http://*/**", "https://*/**"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
